@@ -43,8 +43,8 @@ Permutation tests were performed to determine if observed differences are statis
 <iframe src="assets/dpm-missing-by-position.html" width="800" height="600" frameborder="0"></iframe>
 
 ```text
-Observed stat (position): 0.0495  
-p-value: 0.4910
+Observed stat (position): 0.0022  
+p-value: 0.9890
 ```
 
 > Conclusion: There is no significant evidence that missingness depends on position.
@@ -62,8 +62,8 @@ We tested whether Mid and Bot players differ significantly in KDA using a permut
 <iframe src="assets/kda-hypothesis-test.html" width="800" height="600" frameborder="0"></iframe>
 
 ```text
-Observed difference in KDA (mid - bot): 0.1354  
-p-value: 0.0350
+Observed difference in KDA (mid - bot): -0.1980 
+p-value: 0.0000
 ```
 
 > Conclusion: The result is statistically significant (p < 0.05), suggesting Mid players tend to have higher KDA.
@@ -85,7 +85,7 @@ This model serves as a baseline and helps evaluate how distinguishable Mid and B
 ### Baseline Model Performance  
 <iframe src="assets/baseline-model.html" width="800" height="600" frameborder="0"></iframe>
 
-> Baseline accuracy: ~65% (based on notebook outputs).
+> Baseline accuracy: ~56.9% 
 
 ---
 
@@ -110,8 +110,8 @@ A permutation test was conducted to assess potential bias in precision across Mi
 <iframe src="assets/fairness-test.html" width="800" height="600" frameborder="0"></iframe>
 
 ```text
-Observed stat (teamname): 0.0825  
-p-value: 0.7420
+Observed stat (teamname): 0.0000 
+p-value: 1.0000
 ```
 
 > Conclusion: No significant difference in prediction fairness between Mid and Bot roles.
