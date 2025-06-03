@@ -53,6 +53,13 @@ According to the KDA boxplot, Bot and Mid roles again show higher median and upp
 We simulated 30% missing values (MCAR) in the `dpm` column to evaluate whether missingness depends on player role or team.  
 Permutation tests were performed to determine if observed differences are statistically significant.
 
+### NMAR Reasoning
+
+We suspect that the `dpm` (damage per minute) column may be **Not Missing At Random (NMAR)**.  
+If a player performs extremely poorly—such as going AFK or disconnecting—their damage may not be recorded at all.  
+In this case, the value is missing because of what it would have been (i.e., low or zero), which fits the definition of NMAR.  
+To verify this, we would need more information about how damage statistics are recorded, such as developer logs or documentation.
+
 ### DPM Missingness by Position  
 <iframe src="assets/dpm-missing-by-position.html" width="800" height="600" frameborder="0"></iframe>
 
@@ -62,6 +69,9 @@ p-value: 0.9890
 ```
 
 > Conclusion: There is no significant evidence that missingness depends on position.
+
+Although we initially hypothesized that `dpm` missingness might depend on player `position`, the high p-value (0.9890) suggests the missingness is likely independent.  
+We did not identify a column that significantly predicts missingness under the MCAR simulation.
 
 ---
 
