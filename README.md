@@ -90,7 +90,8 @@ Observed difference in KDA (mid - bot): -0.1980
 p-value: 0.0000
 ```
 
-> Conclusion: The result is statistically significant (p < 0.05), suggesting Mid players tend to have higher KDA.
+> Conclusion: The result is statistically significant (p < 0.05), suggesting **Bot players tend to have higher KDA than Mid players on average**.  
+> However, since this is an observational study and not a randomized controlled experiment, this result does not imply causation.
 
 ---
 
