@@ -12,6 +12,13 @@ This is a DSC 80 project website.
 
 We analyze whether **Mid** or **Bot** players contribute more to their teams in competitive League of Legends matches.  
 Using data from the 2022 season, we explore statistical performance metrics, conduct hypothesis testing, and train predictive models to understand carry potential across roles.
+This dataset includes over **120,000 rows** from more than **10,000 matches**, with each match containing **10 player-level** and **2 team-level rows**.  
+For our analysis, we focus on the following relevant columns:
+
+- `position`: the player’s role (e.g., top, jng, mid, bot, sup)  
+- `kills`, `deaths`, `assists`: key stats used to evaluate performance  
+- `dpm`: damage per minute, a strong indicator of contribution  
+- `teamname`, `side`: contextual match metadata
 
 ---
 
@@ -19,18 +26,25 @@ Using data from the 2022 season, we explore statistical performance metrics, con
 
 We removed team-level rows, filtered for player roles (top, jng, mid, bot, sup), and cleaned key columns (`kills`, `deaths`, `assists`, `dpm`).  
 We also removed rows with missing values in those key performance columns.
+Each match in the dataset has **12 rows** — **10 for individual players** and **2 for team-level summaries**.  
+Since our question focuses on individual player performance, we excluded team-level rows by selecting only standard roles.
 
 ### Position Distribution  
 <iframe src="assets/position-distribution.html" width="800" height="600" frameborder="0"></iframe>
+Most players are evenly distributed across the five roles.
 
 ### DPM Distribution  
 <iframe src="assets/dpm-distribution.html" width="800" height="600" frameborder="0"></iframe>
+Most players have a DPM between 300 and 600, with a few extreme outliers over 1000.
 
 ### DPM by Position  
 <iframe src="assets/dpm-by-position.html" width="800" height="600" frameborder="0"></iframe>
+The boxplot shows that Mid and Bot players generally have higher DPM than other roles, with Mid laners having the highest median and more upper-range outliers. 
+This supports the hypothesis that Mid or Bot may carry more often.
 
 ### KDA by Position  
 <iframe src="assets/kda-by-position.html" width="800" height="600" frameborder="0"></iframe>
+According to the KDA boxplot, Bot and Mid roles again show higher median and upper quartile values, suggesting that they often contribute more significantly to team kills and assists with fewer deaths.
 
 ---
 
