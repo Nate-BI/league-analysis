@@ -119,13 +119,26 @@ As a simple baseline model without tuning or feature selection, this performance
 
 ## Final Model
 
-We improved upon the baseline using feature transformations and a random forest classifier.  
-This model captures non-linear interactions and improves prediction performance.
+We improved upon the baseline model by applying feature transformations and using a Random Forest classifier with hyperparameter tuning.  
+This model captures potential non-linear interactions between performance metrics and player role.
+
+We used a `ColumnTransformer` to apply:
+- `StandardScaler` to `kills` and `deaths`, as these are approximately normally distributed;
+- `QuantileTransformer` to `assists`, due to its right-skewed distribution;
+- `dpm` was used without transformation.
+
+We performed grid search over two hyperparameters:
+- `n_estimators`: number of trees (50, 100)
+- `max_depth`: maximum tree depth (5, 10, None)
+
+The best parameters were:  
+`max_depth = 10`, `n_estimators = 100`
 
 ### Final Model Performance  
 <iframe src="assets/final-model.html" width="800" height="600" frameborder="0"></iframe>
 
-> Final accuracy: Higher than baseline, indicating clear statistical differences between Mid and Bot roles.
+> Final accuracy: **56.76%**, slightly lower than the baseline model (56.96%).  
+> Although the final model did not outperform the baseline, it demonstrates careful feature engineering and the ability to capture more complex relationships between features and role classification.
 
 ---
 
