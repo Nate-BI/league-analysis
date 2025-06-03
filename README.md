@@ -144,17 +144,24 @@ The best parameters were:
 
 ## Fairness Analysis
 
-We tested whether the model's **prediction error rates** are unfairly distributed between roles.  
-A permutation test was conducted to assess potential bias in precision across Mid and Bot predictions.
+We tested whether our final model performs equally well for players of different roles.
+
+**Group X:** Mid laners  
+**Group Y:** Bot laners  
+**Evaluation Metric:** Precision  
+
+We conducted a permutation test to assess potential bias in model precision across roles.
+
+**Null Hypothesis (H₀):** The model is fair; the precision for Mid and Bot players is the same.  
+**Alternative Hypothesis (H₁):** The model is unfair; the precision differs significantly between the two roles.
 
 ### Fairness Test  
 <iframe src="assets/fairness-test.html" width="800" height="600" frameborder="0"></iframe>
 
-```text
-Observed stat (teamname): 0.0000 
-p-value: 1.0000
-```
+**Observed Precision Difference:** 0.0000  
+**p-value:** 1.0000
 
-> Conclusion: No significant difference in prediction fairness between Mid and Bot roles.
+> **Conclusion:** Since the p-value is greater than 0.05, we fail to reject the null hypothesis.  
+> This suggests that the model performs **equally fairly** for both Mid and Bot players.
 
 ---
