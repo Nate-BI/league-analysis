@@ -99,6 +99,7 @@ p-value: 0.0000
 
 We aim to predict whether a player is **Mid** or **Bot** based on their performance stats.  
 This reframes the role comparison as a binary classification task using numerical features: `kills`, `deaths`, `assists`, and `dpm`.
+We use **accuracy** as our evaluation metric, since the two classes (Mid and Bot) are roughly balanced and the cost of misclassification is symmetric.
 
 ---
 
@@ -111,6 +112,8 @@ This model serves as a baseline and helps evaluate how distinguishable Mid and B
 <iframe src="assets/baseline-model.html" width="800" height="600" frameborder="0"></iframe>
 
 > Baseline accuracy: ~56.9% 
+All four features used are **quantitative**; no ordinal or nominal features were included, so no encoding was necessary.  
+As a simple baseline model without tuning or feature selection, this performance (~56.9%) is a reasonable starting point for comparison.
 
 ---
 
