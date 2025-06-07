@@ -29,6 +29,12 @@ We also removed rows with missing values in those key performance columns.
 Each match in the dataset has **12 rows** — **10 for individual players** and **2 for team-level summaries**.  
 Since our question focuses on individual player performance, we excluded team-level rows by selecting only standard roles.
 
+### Cleaned DataFrame Preview
+
+The following image shows the head of our cleaned DataFrame. It includes only player-level rows and keeps only the relevant columns: `gameid`, `playername`, `position`, `teamname`, `side`, `kills`, `deaths`, `assists`, and `dpm`.
+
+<img src="assets/df-players-head.png.jpg" alt="Head of Cleaned DataFrame" style="width:800px;">
+
 ### Position Distribution  
 <iframe src="assets/position-distribution.html" width="800" height="600" frameborder="0"></iframe>
 Most players are evenly distributed across the five roles.
